@@ -15,7 +15,7 @@ blocked_sites = ['www.youtube.com', 'youtube.com', 'www.vk.com', 'vk.com']
 
 while True:
     if start_time < datetime.now() < finish_time:
-        print('Доступ ограничен!')
+        print('Access is Limited!')
 
         with open(hosts, 'r+') as file:
             src = file.read()
@@ -34,6 +34,6 @@ while True:
                 if not any(site in line for site in blocked_sites):
                     file.write(line)
             file.truncate()
-        print('Доступ открыт!')
+        print('Access is Open!')
 
     time.sleep(5)
